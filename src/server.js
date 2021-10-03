@@ -15,7 +15,7 @@ app.post("/signin", signin);
 app.get("/users", user)
 
 app.get("/", async (req, res) => {
-    return  res.send('Welcome to Daily Code Buffer in Heroku Auto Deployment!!');
+    res.send('Welcome to backend!');
 })
 
 app.use("/tweets", tweetController)
