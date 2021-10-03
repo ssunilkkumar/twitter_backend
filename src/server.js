@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config()
 
 const connect = require("./config/db");
 
@@ -12,6 +13,10 @@ const tweetController = require("./controllers/tweet.controller")
 app.post("/signup", signup);
 app.post("/signin", signin);
 app.get("/users", user)
+
+app.get("/", async (req, res) => {
+    return res.status(200).json({hi: "hi"})
+})
 
 app.use("/tweets", tweetController)
 
